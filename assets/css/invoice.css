@@ -1,0 +1,135 @@
+body{
+	font-family: "Poppins", sans-serif;
+}
+#invoice{
+	padding: 30px;
+}
+
+.invoice {
+	position: relative;
+	background-color: #FFF;
+	min-height: 680px;
+	padding: 15px
+}
+
+.logo, .invoice-to{
+	width: 30%;
+	float: left;
+}
+
+.invoice header {
+	padding: 10px 0;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ff5252
+}
+
+.invoice .company-details {
+	text-align: right;
+	float: right;
+}
+
+.invoice .company-details .name {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.invoice .contacts {
+	margin-bottom: 20px
+}
+
+.invoice .invoice-to {
+	text-align: left
+}
+
+.invoice .invoice-to .to {
+	margin-top: 5;
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.invoice .invoice-to .address, .invoice .invoice-to .email, .text-gray-light, .invoice .invoice-details .invoice-date, .payment {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+.invoice .invoice-details {
+	text-align: right
+}
+
+.invoice .invoice-details .invoice-no{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.invoice .invoice-id {
+	margin-bottom: 5px;
+	color: #222;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.invoice .date {
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+.invoice main {
+	padding-bottom: 50px
+}
+
+.invoice table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px
+}
+
+.invoice table td{
+	padding: 10px 10px;
+	font-size: 12px !important;
+}
+
+.invoice table th {
+	padding: 10px;
+	background: #eee;
+	border-bottom: 1px solid #fff;
+	white-space: nowrap;
+	font-weight: bold;
+	font-size: 13px
+}
+
+.invoice table tbody tr:last-child td {
+	border-bottom: 1px solid #ddd !important;
+}
+
+.invoice table tfoot td {
+	background: 0 0;
+	border-bottom: none;
+	white-space: nowrap;
+	text-align: right;
+	padding: 10px 0px;
+	border-top: 0;
+	font-size: 14px;
+}
+
+@media print {
+	.invoice {
+		font-size: 11px!important;
+		overflow: hidden!important
+	}
+
+	.invoice>div:last-child {
+		page-break-before: always
+	}
+}
+
+@page {
+   margin: 0mm 0mm 0mm 0mm;
+}

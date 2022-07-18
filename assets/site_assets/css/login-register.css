@@ -1,0 +1,65 @@
+.err{
+   display: none;
+   margin-bottom: 1rem;
+}
+.step2-container{
+  display: none;
+}
+.step2-container .sent_otp_success{
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: Green;
+}
+.step2-container .sent_otp_success img{
+  width: 25px;
+}
+.btn_resend{
+  padding: 5px !important;
+  font-size: small !important;
+}
+.grow-btn{
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.grow-circle {
+  height: 25px;
+  width: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  transform: scale(0);
+}
+.myalert p{
+	font-size:1rem;
+  display: flex;
+}
+.myalert-danger p:before{
+  content: '\f12a';
+  font-family: FontAwesome;
+  margin-right: 8px;
+  font-size: 1rem;
+}
+.myalert-close {
+  top: 4px;
+  right: 3px;
+}	
+@keyframes grow {
+  0% {
+    background-color: rgba(50, 50, 50, 0.3);
+    transform: scale(1);
+    z-index: 2;
+  }
+  100% {
+    background-color: rgba(50, 50, 50, 0.1);
+    transform: scale(30);
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.grow {
+  animation: grow 1s ease-out forwards;
+}
