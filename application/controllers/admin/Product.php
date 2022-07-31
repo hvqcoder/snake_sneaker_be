@@ -446,7 +446,8 @@ class Product extends CI_Controller {
                 'seo_title' => $this->input->post('seo_title'),
                 'seo_meta_description' => $this->input->post('seo_meta_description'),
                 'seo_keywords' => $this->input->post('seo_keywords'),
-                'created_at' => strtotime(date('d-m-Y h:i:s A',now()))
+                'created_at' => strtotime(date('d-m-Y h:i:s A',now())),
+                'amount' =>  $this->input->post('amount')
             );
 
             $data = $this->security->xss_clean($data);
@@ -707,6 +708,7 @@ class Product extends CI_Controller {
             'seo_title' => $this->input->post('seo_title'),
             'seo_meta_description' => $this->input->post('seo_meta_description'),
             'seo_keywords' => $this->input->post('seo_keywords'),
+            'amount' =>  $this->input->post('amount')
         );
 
         $data = $this->security->xss_clean($data);

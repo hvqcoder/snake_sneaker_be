@@ -118,6 +118,11 @@ $redirect=$_GET['redirect'].(isset($_GET['category']) ? '&category='.$_GET['cate
                   <div class="col-md-10">
                     <textarea name="product_desc" id="product_desc" class="form-control" rows="2"><?php if(isset($product)){ echo $product[0]->product_desc;} ?></textarea>
                   </div>
+                  <label class="col-md-2 control-label">Số lượng :-
+                        </label>
+                        <div class="col-md-10">
+                          <input type="number" name="amount" id="amount" value="<?php if(isset($product)){ echo $product[0]->amount;} ?>" class="form-control" placeholder="100" required>
+                        </div>
                 </div>
                 
                 <div class="form-group">
@@ -199,14 +204,7 @@ $redirect=$_GET['redirect'].(isset($_GET['category']) ? '&category='.$_GET['cate
                         </div>
                       </div>
                       <div class="col-md-5">
-                        <div class="input-group">
-                          <input type="text" name="you_save_per" id="you_save_per" readonly="readonly" value="" class="form-control" placeholder="Saving in Percentage">
-                          <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                        <div class="iFactor
                 
                 <div class="row">
                   <div class="col-md-6 col-xs-12">

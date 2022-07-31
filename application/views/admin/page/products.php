@@ -124,15 +124,33 @@
           ?>
           <div class="col-lg-4 col-sm-6 col-xs-12 item_holder">
             <div class="block_wallpaper add_wall_category" style="box-shadow:0px 3px 8px rgba(0, 0, 0, 0.3)">  
-              <div class="wall_category_block">
-                <h2 style="font-size: 16px">
+              <div class="wall_category_block" style="background-color: <?php 
+                    if($row->amount < 10 && $row->amount > 0 ){
+                      echo "orange";  
+                    }else if($row->amount == 0){
+                      echo "red";
+                    }
+                  ?>">
+                <h2 style="font-size: 20px">
+                  <!-- <font color=<?php 
+                    if($row->amount < 10 && $row->amount > 0 ){
+                      echo "red";  
+                    }else if($row->amount == 0){
+                      echo "yellow";
+                    } else{
+                      echo "white";
+                    }
+                  ?>> -->
                   <?php 
-                    if(strlen($row->category_name) > 23){
-                      echo substr(stripslashes($row->category_name), 0, 23).'...';  
-                    }else{
-                      echo $row->category_name;
+                    if($row->amount < 10 && $row->amount > 0 ){
+                      echo '! Sắp hết hàng';  
+                    }else if($row->amount == 0){
+                      echo '! Hết hàng';
+                    } else{
+                      echo 'Còn hàng';
                     }
                   ?>
+                  <!-- </font> -->
                 </h2>
                 <?php 
                   $curr_date=date('d-m-Y');
@@ -187,8 +205,12 @@
                   ?>
                   </a>
                 </h2>
+                
                 <p style="margin-bottom: 0px;font-size: 14px">
                   <?php echo $CI->get_sub_category_info($row->sub_category_id, 'sub_category_name')?$CI->get_sub_category_info($row->sub_category_id, 'sub_category_name'):'-';?><?php echo $CI->get_brand_info($row->brand_id, 'brand_name') ? ' ('.$CI->get_brand_info($row->brand_id, 'brand_name').')' : '';?>
+                </p>
+                <p style="margin-bottom: 0px;font-size: 14px">Số lượng: 
+                  <?php echo $row->amount?>
                 </p>
                 <ul>                
                   <li><a href="javascript:void(0)" data-toggle="tooltip" data-tooltip="<?=$ci->number_format_short($row->total_views)?> <?=$this->lang->line('view_lbl')?>"><i class="fa fa-eye"></i></a></li>
