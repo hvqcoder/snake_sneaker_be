@@ -46,6 +46,7 @@ class Apis extends REST_Controller
         $this->load->model('Sub_Category_model');
         $this->load->model('Offers_model');
         $this->load->model('Order_model');
+	$this->load->model('Product_model');
 
         $this->load->library("CompressImage");
 
