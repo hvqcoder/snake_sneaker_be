@@ -684,8 +684,8 @@ class Product extends CI_Controller {
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
 
         $data = array(
-            'category_id' => $this->input->post('category_id'),
-            'sub_category_id' => $this->input->post('sub_cat_id'),
+            'category_id' => 10,
+            'sub_category_id' => 18,
             'brand_id' => $this->input->post('brand_id'),
             'offer_id' => $this->input->post('offer_id'),
             'product_title' => $this->input->post('title'),

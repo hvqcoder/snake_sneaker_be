@@ -100,6 +100,7 @@ $redirect=$_GET['redirect'].(isset($_GET['category']) ? '&category='.$_GET['cate
                         </div>
                         <div class="col-md-3">
                           <?php 
+                          //$product[0]->category_id=10;
                           if(isset($product))
                           {
                             echo '<input type="hidden" class="old_brand_id" value="'.$product[0]->brand_id.'">';  
@@ -108,6 +109,11 @@ $redirect=$_GET['redirect'].(isset($_GET['category']) ? '&category='.$_GET['cate
                           <select name="brand_id" class="select2" id="brand_id">
                             <option value="0" selected>--<?=$this->lang->line('select_brand_lbl')?>--</option>
                           </select>
+                        </div>
+                        <label class="col-md-2 control-label">Số lượng :-
+                        </label>
+                        <div class="col-md-10">
+                          <input type="number" name="amount" id="amount" value="<?php if(isset($product)){ echo $product[0]->amount;} ?>" class="form-control" placeholder="100" required>
                         </div>
                       </div>
                   </div>
@@ -118,11 +124,7 @@ $redirect=$_GET['redirect'].(isset($_GET['category']) ? '&category='.$_GET['cate
                   <div class="col-md-10">
                     <textarea name="product_desc" id="product_desc" class="form-control" rows="2"><?php if(isset($product)){ echo $product[0]->product_desc;} ?></textarea>
                   </div>
-                  <label class="col-md-2 control-label">Số lượng :-
-                        </label>
-                        <div class="col-md-10">
-                          <input type="number" name="amount" id="amount" value="<?php if(isset($product)){ echo $product[0]->amount;} ?>" class="form-control" placeholder="100" required>
-                        </div>
+                  
                 </div>
                 
                 <div class="form-group">
@@ -204,7 +206,14 @@ $redirect=$_GET['redirect'].(isset($_GET['category']) ? '&category='.$_GET['cate
                         </div>
                       </div>
                       <div class="col-md-5">
-                        <div class="iFactor
+                      <div class="input-group">
+                          <input type="text" name="you_save_per" id="you_save_per" readonly="readonly" value="" class="form-control" placeholder="Saving in Percentage">
+                          <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 
                 <div class="row">
                   <div class="col-md-6 col-xs-12">
@@ -511,7 +520,7 @@ $redirect=$_GET['redirect'].(isset($_GET['category']) ? '&category='.$_GET['cate
   var product_id=$(".product_id").val();
 
   if(product_id!=''){
-    var _id=$("select[name='category_id']").val();
+    var _id=$("select[name='category_id']").val();;
 
     // for sub category
     var _old_id_sub=$(".old_sub_cat_id").val();
